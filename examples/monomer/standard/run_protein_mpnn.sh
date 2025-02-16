@@ -14,7 +14,7 @@
 source ~/.bashrc
 conda activate mpnn
 
-# Set the GPUs you want to use (both GPUs in your case)
+# Set the GPUs
 export CUDA_VISIBLE_DEVICES=0,1
 
 #module load cuda
