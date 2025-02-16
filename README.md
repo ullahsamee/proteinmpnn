@@ -8,8 +8,34 @@ This repo includes the Kuhlman Lab fork of ProteinMPNN. It includes all the func
 ![ProteinMPNN](https://docs.google.com/drawings/d/e/2PACX-1vTtnMBDOq8TpHIctUfGN8Vl32x5ISNcPKlxjcQJF2q70PlaH2uFlj2Ac4s3khnZqG1YxppdMr0iTyk-/pub?w=889&h=358)
 Read [ProteinMPNN paper](https://www.biorxiv.org/content/10.1101/2022.06.03.494563v1).
 
-## Installation:
+## 1. Anaconda Configuration:
+```
+cd ~/Downloads
+curl -O https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+bash Anaconda3-2024.10-1-Linux-x86_64.sh
+source ~/.bashrc
+type “yes”
+When asked whether to initialize Anaconda by running conda init, type “yes” to allow Anaconda to modify your shell configuration files.
+logout and login
+conda info
 
+conda is configured
+```
+## 2. Mamba Configuration:
+```
+git clone https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+bash Miniforge3-Linux-x86_64.sh
+
+Press Enter to page through the licence
+Accept the licence
+Wait for the installer to finish (at least 30 seconds)
+When asked “Do you want to installer to initialize Miniconda by running conda init” then type “yes”
+mamba info
+
+mamba is configured
+```
+
+## 3. Proteinmpnn setup:
 ```
 git clone git@github.com:Kuhlman-Lab/proteinmpnn.git
 cd proteinmpnn
