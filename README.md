@@ -48,6 +48,39 @@ conda activate mpnn
 ### General Usage
 
 The different input arguments available for each script can be viewed by adding `-h` to your python call (e.g., `python /home/asus/biotools/proteinmpnn/run/generate_json.py -h`).
+```
+python /home/asus/biotools/proteinmpnn/run/generate_json.py -h
+usage: generate_json.py [-h] [--pdb_dir PDB_DIR] [--designable_res DESIGNABLE_RES] [--default_design_setting DEFAULT_DESIGN_SETTING] [--symmetric_res SYMMETRIC_RES]
+                        [--cluster_center CLUSTER_CENTER] [--cluster_radius CLUSTER_RADIUS] [--out_path OUT_PATH] [--gap GAP] [--validation_tries VALIDATION_TRIES] [--bidirectional]
+                        [--constraints CONSTRAINTS] [--multi_state]
+
+Script that takes a PDB and designspecifications to create a json file for inputto ProteinMPNN
+
+options:
+  -h, --help            show this help message and exit
+  --pdb_dir PDB_DIR     Path to the directory containing PDB files.
+  --designable_res DESIGNABLE_RES
+                        PDB chain and residue numbers to mutate, separated by commas and/or hyphens. E.g. A10,A12-A15.Multi-state requires filename prefix. E.g. PDB1:A10,A12-A15
+  --default_design_setting DEFAULT_DESIGN_SETTING
+                        Default setting amino acid types that residues are allowed to mutate to. Use 'all' to allow any amino acid to be design. Default is 'all'.
+  --symmetric_res SYMMETRIC_RES
+                        PDB chain and residue numbers to force symmetric design, separated by colons and commas. E.g. to force symmetry between residue A1 and A15 use 'A1:A15' and for
+                        symmetry between residues 1-5 on chains A and B use 'A1-A5:B1-B15'. (Note that the number of residues on each side of the colon must be the same).Cannot be used in
+                        multi-state mode.
+  --cluster_center CLUSTER_CENTER
+                        PDB chain and residue numbers which will serve as mutation centers. Every residue with a CA within --cluster_radius Angstroms will be mutatable
+  --cluster_radius CLUSTER_RADIUS
+                        Radius from cluster mutation centers in which to include residues for mutation. Default is 10.0 A.
+  --out_path OUT_PATH   Path for output json file. Default is proteinmpnn_res_specs.json.
+  --gap GAP             Gap (in Angstrom) between states in MSD intermediate structure. Only may be needed if your structures are very big. Default is 1000.0 A.
+  --validation_tries VALIDATION_TRIES
+                        If set to 0, will not check the MSD intermediate structure for clashes. Recommended when running MSD on a new system. Very slow!
+  --bidirectional       Turn on bidirectional coding constraints. MSD only. Default is off.
+  --constraints CONSTRAINTS
+                        Semicolon-separated list of multi-state design constraints. commas separate individual residue sets within a constraint. E.g.
+                        PDB1:A10-A15:1,PDB2:A10-A15:0.5;PDB1:A20-A25:1,PDB3:B20-B25:-1See examples/multi_state for details.
+  --multi_state         Enable multi-state design (MSD) parsing.
+```
 
 ProteinMPNN accepts PDB files as input and produces FASTA files as output.
 
