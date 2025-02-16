@@ -14,6 +14,7 @@ Read [ProteinMPNN paper](https://www.biorxiv.org/content/10.1101/2022.06.03.4945
 git clone git@github.com:Kuhlman-Lab/proteinmpnn.git
 cd proteinmpnn
 mamba env create -f setup/proteinmpnn.yml
+conda activate mpnn
 ```
 
 ## Usage Guidelines:
