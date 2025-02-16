@@ -47,7 +47,7 @@ conda activate mpnn
 
 ### General Usage
 
-The different input arguments available for each script can be viewed by adding `-h` to your python call (e.g., `python generate_json.py -h`).
+The different input arguments available for each script can be viewed by adding `-h` to your python call (e.g., `python /home/asus/biotools/proteinmpnn/run/generate_json.py -h`).
 
 ProteinMPNN accepts PDB files as input and produces FASTA files as output.
 
