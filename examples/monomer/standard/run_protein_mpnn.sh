@@ -13,8 +13,12 @@
 
 source ~/.bashrc
 conda activate mpnn
-module load cuda
-module load gcc
+
+# Set the GPUs you want to use (both GPUs in your case)
+export CUDA_VISIBLE_DEVICES=0,1
+
+#module load cuda
+#module load gcc
 
 python ../../../run/generate_json.py @json.flags
 
